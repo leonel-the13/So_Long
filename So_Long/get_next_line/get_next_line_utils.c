@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vleonel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 11:22:26 by vleonel           #+#    #+#             */
-/*   Updated: 2024/06/20 11:22:35 by vleonel          ###   ########.fr       */
+/*   Created: 2024/05/30 09:24:16 by vleonel           #+#    #+#             */
+/*   Updated: 2024/05/30 09:24:18 by vleonel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_len(const char *s)
 {
 	size_t	i;
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_rchr(const char *s, int c)
 {
 	int	i;
 
@@ -38,12 +38,12 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_dup(const char *s1)
 {
 	char	*dst;
 	size_t	i;
 
-	i = ft_strlen(s1);
+	i = ft_len(s1);
 	dst = (char *)malloc(sizeof(char) * (i + 1));
 	if (!dst)
 		return (NULL);
@@ -57,7 +57,7 @@ char	*ft_strdup(const char *s1)
 	return (dst);
 }
 
-char	*ft_strjoin(char *s1, const char *s2)
+char	*ft_join(char *s1, const char *s2)
 {
 	char	*str;
 	size_t	i;
@@ -65,7 +65,7 @@ char	*ft_strjoin(char *s1, const char *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	str = (char *)malloc(ft_len(s1) + ft_len(s2) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -86,7 +86,7 @@ char	*ft_strjoin(char *s1, const char *s2)
 	return (str);
 }
 
-char	*ft_substr(const char *s, size_t start, size_t len)
+char	*ft_sub(const char *s, size_t start, size_t len)
 {
 	char	*substr;
 	size_t	len_s;
@@ -94,7 +94,7 @@ char	*ft_substr(const char *s, size_t start, size_t len)
 
 	if (!s || !len)
 		return (NULL);
-	len_s = ft_strlen(s);
+	len_s = ft_len(s);
 	if (start >= len_s)
 		len = 0;
 	if (len > len_s - start)

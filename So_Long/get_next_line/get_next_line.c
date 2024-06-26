@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vleonel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 11:21:16 by vleonel           #+#    #+#             */
-/*   Updated: 2024/06/20 11:21:25 by vleonel          ###   ########.fr       */
+/*   Created: 2024/05/30 09:23:54 by vleonel           #+#    #+#             */
+/*   Updated: 2024/05/30 09:23:55 by vleonel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 static char	*get_buffer(char *buffer, int fd)
 {
@@ -21,16 +21,16 @@ static char	*get_buffer(char *buffer, int fd)
 	while (++i <= BUFFER_SIZE)
 		tmp[i] = '\0';
 	i = 1;
-	while (!ft_strchr(tmp, '\n') && i)
+	while (!ft_rchr(tmp, '\n') && i)
 	{
 		i = read(fd, tmp, BUFFER_SIZE);
 		if (i < 0 || (!i && !buffer))
 			return (NULL);
 		tmp[i] = '\0';
 		if (!buffer)
-			buffer = ft_strdup(tmp);
+			buffer = ft_dup(tmp);
 		else
-			buffer = ft_strjoin(buffer, tmp);
+			buffer = ft_join(buffer, tmp);
 		if (!buffer)
 			return (NULL);
 	}
@@ -54,8 +54,8 @@ char	*get_next_line(int fd)
 		++i;
 	if (buff[i] == '\n')
 		++i;
-	line = ft_substr(buff, 0, i);
-	tmp = ft_substr(buff, i, ft_strlen(buff) - i);
+	line = ft_sub(buff, 0, i);
+	tmp = ft_sub(buff, i, ft_len(buff) - i);
 	free(buff);
 	buff = tmp;
 	return (line);

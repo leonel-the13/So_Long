@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vleonel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 09:24:01 by vleonel           #+#    #+#             */
-/*   Updated: 2024/05/30 09:24:02 by vleonel          ###   ########.fr       */
+/*   Created: 2024/05/15 17:10:25 by vleonel           #+#    #+#             */
+/*   Updated: 2024/05/15 17:10:26 by vleonel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-size_t	ft_len(const char *s);
-char	*get_next_line(int fd);
-char	*ft_rchr(const char *s, int c);
-char	*ft_dup(const char *s1);
-char	*ft_join(char *s1, const char *s2);
-char	*ft_sub(const char *s, size_t start, size_t len);
-
-#endif
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
+}

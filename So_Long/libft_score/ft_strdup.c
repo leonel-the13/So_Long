@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vleonel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 09:24:01 by vleonel           #+#    #+#             */
-/*   Updated: 2024/05/30 09:24:02 by vleonel          ###   ########.fr       */
+/*   Created: 2024/05/14 08:02:47 by vleonel           #+#    #+#             */
+/*   Updated: 2024/05/14 08:02:48 by vleonel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+static char	*ft_strcpy(char *dup, char *src)
+{
+	int	i;
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
 
-size_t	ft_len(const char *s);
-char	*get_next_line(int fd);
-char	*ft_rchr(const char *s, int c);
-char	*ft_dup(const char *s1);
-char	*ft_join(char *s1, const char *s2);
-char	*ft_sub(const char *s, size_t start, size_t len);
+char	*ft_strdup(const char *str)
+{
+	char	*duplicate;
 
-#endif
+	duplicate = (char *)malloc(ft_strlen(str) + 1);
+	if (duplicate != NULL)
+		ft_strcpy(duplicate, (char *)str);
+	return (duplicate);
+}

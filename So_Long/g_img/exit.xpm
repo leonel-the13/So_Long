@@ -1,0 +1,70 @@
+/* XPM */
+static char *result[] = {
+/* columns rows colors chars-per-pixel */
+"50 50 10 1",
+"  c None",
+". c #cccccc",  /* Light gray background */
+"X c #ff0000",  /* Red */
+"o c #000000",  /* Black */
+"E c #ffffff",  /* White */
+"x c #999999",  /* Dark gray */
+"s c #666666",  /* Medium gray for details */
+"h c #ff9999",  /* Light red for highlights */
+"t c #333333",  /* Dark gray for shadows */
+"b c #dddddd",  /* Light gray for bevel */
+
+/* pixels */
+"oooooooooooooooooooooooooooooooooooooooooooooooooo",
+"o..................................................o",
+"o.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.o",
+"o.Xsss...............Xsss...............X.o",
+"o.Xsss...............Xsss...............X.o",
+"o.Xsss...............Xsss...............X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss.......E.......Xsss.......E.......X.o",
+"o.Xsss...............Xsss...............X.o",
+"o.Xsss...............Xsss...............X.o",
+"o.Xsss...............Xsss...............X.o",
+"o.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.o",
+"o..................................................o",
+"oooooooooooooooooooooooooooooooooooooooooooooooooo",
+};

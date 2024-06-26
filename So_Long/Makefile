@@ -1,25 +1,28 @@
 NAME = so_long
 
-GAME_LOGIC = g_lgc/*.c
+SRCS = g_lgc/*.c get_next_line/*.c
 
-GET_NEXT_LINE = get_next_line/*.c
+MINILIBX = minilibx
 
-MINILIBX = minilibx/
-
-LIBRARY = -Lminlibx -lmlx -framework OpenGL AppKit
+LIBRARY = -L${MINILIBX} -lmlx -lX11 -lXext
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -Iincludes/
+CFLAGS = -Wall -Wextra -Werror
+
+MAKEFLAGS += --silent
 
 all:
 	@make -C ${MINILIBX}
-	@${CC} ${CFLAGS} ${GAME_LOGIC} ${GET_NEXT_LINE} ${LIBRARY} -o ${NAME}
-
+	@make -C libft_score
+	@${CC} ${CFLAGS} ${SRCS} ${LIBRARY} libft_score/libft.a -o ${NAME}
+	@clear
 clean:
+	@make clean -C libft_score
+	@make clean -C ${MINILIBX}
 
 fclean: clean
-	@make fclean -C ${MINILIBX}
+	@make fclean -C libft_score
 	@rm -rf ${NAME}
 
 re: fclean all

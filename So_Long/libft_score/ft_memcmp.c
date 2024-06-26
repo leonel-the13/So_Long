@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vleonel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 09:24:01 by vleonel           #+#    #+#             */
-/*   Updated: 2024/05/30 09:24:02 by vleonel          ###   ########.fr       */
+/*   Created: 2024/05/15 13:00:59 by vleonel           #+#    #+#             */
+/*   Updated: 2024/05/15 13:01:00 by vleonel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t n)
+{
+	unsigned char	*p1;
+	unsigned char	*p2;
+	int				i;
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-size_t	ft_len(const char *s);
-char	*get_next_line(int fd);
-char	*ft_rchr(const char *s, int c);
-char	*ft_dup(const char *s1);
-char	*ft_join(char *s1, const char *s2);
-char	*ft_sub(const char *s, size_t start, size_t len);
-
-#endif
+	p1 = (unsigned char *)ptr1;
+	p2 = (unsigned char *)ptr2;
+	i = 0;
+	while (n-- > 0)
+	{
+		if (*(p1 + i) == *(p2 + i))
+			i++;
+		else
+			return (*(p1 + i) - *(p2 + i));
+	}
+	return (0);
+}

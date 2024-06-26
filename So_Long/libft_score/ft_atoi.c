@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vleonel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 09:24:01 by vleonel           #+#    #+#             */
-/*   Updated: 2024/05/30 09:24:02 by vleonel          ###   ########.fr       */
+/*   Created: 2024/05/14 07:58:41 by vleonel           #+#    #+#             */
+/*   Updated: 2024/05/14 07:58:43 by vleonel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	sinal;
+	int	result;
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-size_t	ft_len(const char *s);
-char	*get_next_line(int fd);
-char	*ft_rchr(const char *s, int c);
-char	*ft_dup(const char *s1);
-char	*ft_join(char *s1, const char *s2);
-char	*ft_sub(const char *s, size_t start, size_t len);
-
-#endif
+	i = 0;
+	sinal = 1;
+	result = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sinal *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (str[i] - '0') + (result * 10);
+		i++;
+	}
+	return (result * sinal);
+}
