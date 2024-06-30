@@ -17,6 +17,7 @@ all:
 	@make -C libft_score
 	@${CC} ${CFLAGS} ${SRCS} ${LIBRARY} libft_score/libft.a -o ${NAME}
 	@clear
+	
 clean:
 	@make clean -C libft_score
 	@make clean -C ${MINILIBX}
